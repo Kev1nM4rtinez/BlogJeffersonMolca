@@ -39,3 +39,29 @@ for (let i = 0; i < themeBtn.length; i++) {
   })
 
 }
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('header'); // Selecciona el header
+    if (window.scrollY > 50) { // Cambia el valor 50 según lo que necesites
+      header.classList.add('header-scrolled'); // Agrega la clase
+    } else {
+      header.classList.remove('header-scrolled'); // Quita la clase
+    }
+  });
+
+  // Selecciona el botón "Leer más"
+  const loadMoreButton = document.querySelector('.load-more');
+  // Selecciona las tarjetas ocultas
+  const hiddenCards = document.querySelectorAll('.blog-card-large.hidden');
+
+  // Maneja el evento click en el botón "Leer más"
+  loadMoreButton.addEventListener('click', () => {
+    // Muestra cada tarjeta oculta
+    hiddenCards.forEach(card => {
+      card.classList.remove('hidden');
+    });
+
+    // Opcional: oculta el botón "Leer más" si no hay más tarjetas ocultas
+    if (hiddenCards.length > 0) {
+      loadMoreButton.style.display = 'none'; // Oculta el botón si no hay más tarjetas
+    }
+  });

@@ -66,6 +66,56 @@
 }
 
 
+.inicio {
+  position: relative; /* Asegura que la sección inicio sea un contenedor para el fondo */
+  height: 50vh; /* Ajusta la altura de la sección según el viewport */
+  overflow: hidden; /* Evita que la imagen se desborde fuera de la sección */
+}
+
+.inicio .fondo-img {
+  background: url(/img/fondo1.jpg) no-repeat center center; /* Centra la imagen */
+  background-size: cover; /* Asegura que la imagen cubra toda la sección */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%; /* Asegura que la imagen ocupe el 100% de la sección */
+  width: 100%; /* Ajusta el ancho al 100% de la sección */
+  z-index: 1; /* Mantiene la imagen detrás del contenido */
+}
+
+/*-----------------------------------*\ 
+  #HEADER
+\*-----------------------------------*/
+
+header {
+  background: var(--background-primary);
+  position: sticky; /* Esto hace que el header sea "pegajoso" */
+  top: 0; /* Se mantendrá en la parte superior */
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+header .flex-wrapper { display: none; }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+}
+
+header {
+  transition: all 0.3s ease; /* Añade una transición suave */
+}
+
+.header-scrolled {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  transform: scale(0.99); /* Reduce el tamaño */
+}
+
+body {
+  overflow-x: hidden; /* Evita el desbordamiento horizontal */
+}
 
 
 
